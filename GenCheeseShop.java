@@ -140,5 +140,7 @@ public class GenCheeseShop {
 		System.out.println("Sub Total: " + "$" + subTotal);
 		System.out.println("-Discount: " + "$" + subDiscount);
 		System.out.println("Total    : " + "$" + totalFinal);
+		System.out.println();
+		System.out.priintln("Thank you for choosing our Cheesy store")
 	}
 }
