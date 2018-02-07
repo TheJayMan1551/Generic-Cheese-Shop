@@ -142,5 +142,6 @@ public class GenCheeseShop {
 		System.out.println("Total    : " + "$" + totalFinal);
 		System.out.println();
 		System.out.priintln("Thank you for choosing our Cheesy store")
+		System.out.println("Woooooow");
 	}
 }
