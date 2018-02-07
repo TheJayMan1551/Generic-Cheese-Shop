@@ -6,12 +6,13 @@ public class GenCheeseShop {
 	public static void main(String[] args) {
 
 		final int MAXCHEESE = 1;
-
+// These are the arrays that were included in the lab already and added the PricesTotal[] array
 		String[] names = new String[MAXCHEESE];
 		double[] prices = new double[MAXCHEESE];
 		double[] pricesTotal = new double[MAXCHEESE];
 		int[] amounts = new int[MAXCHEESE];
 
+//Depending on what the final int MAXCHEESE is, the 3 basic Cheese Types will show
 		for (int i = 0; i < MAXCHEESE; ++i) {
 			names[0] = "Dalaran Sharp";
 			prices[0] = 1.25;
@@ -30,6 +31,7 @@ public class GenCheeseShop {
 			break;
 		}
 
+		//Continuing on with the Cheeses, it will now show how much each cheese is
 		System.out.println("We sell " + MAXCHEESE + " kinds of Cheese");
 
 
@@ -48,6 +50,7 @@ public class GenCheeseShop {
 			break;
 		}
 
+//Random price generator for the other types of Cheeses
 		Random ranGen = new Random(100);
 
 		for (int i = 3; i < MAXCHEESE; i++) {
@@ -58,6 +61,9 @@ public class GenCheeseShop {
 			System.out.println(names[i] + ": $" + prices[i] + " per pound");
 		}
 
+/* Starting from here, the program asks the user for the amount of
+cheese and calculates the total individually
+*/
 		Scanner cheeseAmt = new Scanner(System.in);
 
 		int SharpAmt = 0, BrieAmt = 0, SwissAmt = 0;
@@ -67,7 +73,7 @@ public class GenCheeseShop {
 		for (int i = 0; i < MAXCHEESE; ++i) {
 			System.out.print("Enter the amount of Sharp in lbs: ");
 			SharpAmt = cheeseAmt.nextInt();
-			SharpTotal = SharpAmt * 1.25; 
+			SharpTotal = SharpAmt * 1.25;
 			break;
 		}
 		for (int i = 1; i < MAXCHEESE; ++i) {
@@ -90,12 +96,14 @@ public class GenCheeseShop {
 			pricesTotal[i] = amounts[i] * prices[i];
 			DiffSubTotal += pricesTotal[i];
 		}
-
+//total of all the cheeses
 		subTotal = SharpTotal + BrieTotal + SwissTotal + DiffSubTotal;
 
 		double subDiscount = 0;
 		double totalFinal = 0;
 
+/*Conditional statement to determine whether or not the user will get a discount
+or not */
 		if (subTotal >= 50) {
 			totalFinal = subTotal - 10;
 			subDiscount = 10;
@@ -110,13 +118,17 @@ public class GenCheeseShop {
 		Scanner choice = new Scanner(System.in);
 
 		int numChoice = 0;
-		
+
+/*Asks the user whether or not they want their list of cheeses to be displayed
+along with their total prices. */
 		for (int i = 0; i < MAXCHEESE; ++i) {
 		System.out.print("Display the itemized list? (1 for yes)");
 		numChoice = choice.nextInt();
 		break;
 		}
 
+/* If the amount of cheese the user picks is 0, then that cheese will not be
+displayed for the purpose of organization */
 		if (numChoice == 1) {
 			if (SharpAmt != 0) {
 				System.out.println(SharpAmt + " lbs of Sharp @ $1.25 = " + "$" + SharpTotal);
@@ -124,7 +136,7 @@ public class GenCheeseShop {
 			if (BrieAmt != 0) {
 				System.out.println(BrieAmt + " lbs of Brie @ $10.00 = " + "$" + BrieTotal);
 			}
-			if (SwissAmt != 0) { 
+			if (SwissAmt != 0) {
 				System.out.println(SwissAmt + " lbs of Swiss @ $40.00 = " + "$" + SwissTotal);
 			}
 		}
@@ -135,8 +147,10 @@ public class GenCheeseShop {
 			}
 		}
 
+/* Prints out the subTotal of the cheeses, the discount, and the Final Total
+with the Discount */
 		System.out.println();
-		
+
 		System.out.println("Sub Total: " + "$" + subTotal);
 		System.out.println("-Discount: " + "$" + subDiscount);
 		System.out.println("Total    : " + "$" + totalFinal);
