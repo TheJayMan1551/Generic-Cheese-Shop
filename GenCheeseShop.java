@@ -5,7 +5,7 @@ public class GenCheeseShop {
 
 	public static void main(String[] args) {
 
-		final int MAXCHEESE = 1;
+		final int MAXCHEESE = 0;
 // These are the arrays that were included in the lab already and added the PricesTotal[] array
 		String[] names = new String[MAXCHEESE];
 		double[] prices = new double[MAXCHEESE];
@@ -13,41 +13,35 @@ public class GenCheeseShop {
 		int[] amounts = new int[MAXCHEESE];
 
 //Depending on what the final int MAXCHEESE is, the 3 basic Cheese Types will show
-		for (int i = 0; i < MAXCHEESE; ++i) {
+		if (0 < MAXCHEESE) {
 			names[0] = "Dalaran Sharp";
 			prices[0] = 1.25;
-			break;
 		}
 
-		for (int i = 1; i < MAXCHEESE; ++i) {
+		if (1 < MAXCHEESE) {
 			names[1] = "Stormwind Brie";
 			prices[1] = 10.00;
-			break;
 		}
 
-		for (int i = 2; i < MAXCHEESE; ++i) {
+		if (2 < MAXCHEESE) {
 			names[2] = "Alterac Swiss";
 			prices[2] = 40.00;
-			break;
 		}
 
 		//Continuing on with the Cheeses, it will now show how much each cheese is
 		System.out.println("We sell " + MAXCHEESE + " kinds of Cheese");
 
 
-		for (int i = 0; i < MAXCHEESE; ++i) {
+		if (0 < MAXCHEESE) {
 			System.out.println(names[0] + ": $" + prices[0] + " per pound");
-			break;
 		}
 
-		for (int i = 1; i < MAXCHEESE; ++i) {
+		if (1 < MAXCHEESE) {
 			System.out.println(names[1] + ": $" + prices[1] + " per pound");
-			break;
 		}
 
-		for (int i = 2; i < MAXCHEESE; ++i) {
+		if (2 < MAXCHEESE) {
 			System.out.println(names[2] + ": $" + prices[2] + " per pound");
-			break;
 		}
 
 //Random price generator for the other types of Cheeses
